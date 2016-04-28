@@ -3,8 +3,9 @@ description: 'The new secure way of buying second hand products'
 author:
   name: 'Adriaan van Rossum'
 permalink: '/:title'
-timezone: 'Europe/Amsterdam'
-locale: 'en'
+timezone: Europe/Amsterdam
+locale: en
+baseurl: /packetswap.com/
 
 defaults:
   -
