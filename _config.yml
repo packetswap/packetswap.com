@@ -1,0 +1,25 @@
+title: 'PacketSwap'
+description: 'The new secure way of buying second hand products'
+author:
+  name: 'Adriaan van Rossum'
+permalink: '/:title'
+timezone: 'Europe/Amsterdam'
+locale: 'en'
+
+defaults:
+  -
+    scope:
+      path: ''
+    values:
+      layout: 'base'
+      type: 'pages'
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+      layout: 'post'
+      category: 'blog'
+
+gems:
+  - jemoji
