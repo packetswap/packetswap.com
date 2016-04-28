@@ -1,9 +1,28 @@
 ---
 ---
 
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
 h1.home {
-  font-family: Georgia,"Times New Roman",Times,serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 5em;
   padding: 1.5em 0 0.5em;
   letter-spacing: 0.05em;
+}
+
+p {
+  font-family: 'Noto Serif';
+  line-height: 1.9em;
+  margin: 0 0 10px;
 }
