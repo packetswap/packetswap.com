@@ -5,7 +5,7 @@
     <title>{{ site.title }}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape_once }}{% else %}{{ site.description }}{% endif %}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style/app.css?time={{ site.time | date_to_xmlschema | slugify }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style/app.css?time={{ site.time | date_to_xmlschema | slugify }}">
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}">
     <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
@@ -30,6 +30,6 @@
 
     </script>
 
-    <script type="text/javascript" src="/js/app.js?time={{ site.time | date_to_xmlschema | slugify }}"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/js/app.js?time={{ site.time | date_to_xmlschema | slugify }}"></script>
   </body>
 </html>
