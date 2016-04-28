@@ -21,15 +21,24 @@ main {
   padding: 20px;
 }
 
-h1.home {
+h1, h2, h3 {
   font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.05em;
+}
+
+h1 {
   font-size: 5em;
   padding: 1.5em 0 0.5em;
-  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 3em;
+  padding: 0.5em 0 0.5em;
 }
 
 p {
   font-family: 'Noto Serif';
   line-height: 1.9em;
   margin: 0 0 10px;
+  font-size: 14px;
 }
