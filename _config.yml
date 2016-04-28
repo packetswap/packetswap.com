@@ -5,7 +5,7 @@ author:
 permalink: '/:title'
 timezone: Europe/Amsterdam
 locale: en
-baseurl: /packetswap.com/
+baseurl: /packetswap.com
 
 defaults:
   -
