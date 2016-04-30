@@ -1,15 +1,22 @@
 ---
 ---
 
+@import 'mixins/gradients';
 @import url(https://fonts.googleapis.com/css?family=Amatic+SC);
 
 $gradient-left: #B993D6;
 $gradient-right: #8CA6DB;
 
-$breakpoint: 375px;
+$site-color: mix($gradient-left, $gradient-right, 50%);
+$site-width: 600px;
+$site-breakpoint: 375px;
+$site-margin: 1em;
+
+$color-almost-white: mix(white, $site-color, 85%);
 
 html {
   font-size: 100%;
+  width: 100%;
 }
 
 body {
@@ -17,15 +24,15 @@ body {
   background: -webkit-linear-gradient(to left, $gradient-left, $gradient-right);
   background: linear-gradient(to left, $gradient-left, $gradient-right);
 
+  font-family: Helvetica, sans-serif;
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 20px;
   color: #F5F5F5;
 }
 
 main {
-  max-width: 800px;
+  max-width: $site-width;
+  margin: 0;
+  padding: 0;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -33,31 +40,91 @@ main {
 
 header {
   text-align: center;
+  margin-top: 40px;
 }
 
 h1, h2, h3 {
   font-family: 'Amatic SC', Helvetica, sans-serif;
   color: #F3F1F1;
   font-weight: 400;
+  line-height: 1;
+  margin: 0;
 }
 
 h1 {
   font-size: 5em;
-  @media (min-width: $breakpoint) {
+  @media (min-width: $site-breakpoint) {
     font-size: 8em;
   }
 }
 
 h2 {
   font-size: 2.3em;
-  @media (min-width: $breakpoint) {
+  @media (min-width: $site-breakpoint) {
     font-size: 3.5em;
   }
 }
 
 p {
-  font-family: 'Noto Serif';
-  line-height: 1.9em;
-  margin: 0 0 10px;
-  font-size: 14px;
+  font-weight: 300;
+  line-height: 190%;
+  font-size: 0.9em;
+  margin: $site-margin 0;
 }
+
+section {
+  border-radius: 3px;
+  box-shadow: 2px 2px 10px darken($site-color, 10%);
+  background-color: $color-almost-white;
+  color: #807EB5;
+  padding: 14px;
+  margin: $site-margin 0;
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &.expand {
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      @include linear-gradient('to bottom', rgba(0, 0, 0, 0) 0%, rgba($color-almost-white, 0.9) 80%);
+      content: '';
+      display: block;
+      position: absolute;
+      height: 80px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+    &::after {
+      content: 'Meer';
+      font-size: 12px;
+      text-align: center;
+      display: block;
+      position: absolute;
+      padding: 5px 0;
+      bottom: 20px;
+      width: 100px;
+      left: calc(50% - 50px);
+      border: 1px solid $site-color;
+      color: $site-color;
+      border-radius: 3px;
+      background-color: $color-almost-white;
+      cursor: pointer;
+    }
+
+    &:hover::after {
+      background-color: white;
+    }
+  }
+}
+
