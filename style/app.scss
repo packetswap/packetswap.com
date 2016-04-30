@@ -3,14 +3,17 @@
 
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 
+$gradient-left: #B993D6;
+$gradient-right: #8CA6DB;
+
 html {
   font-size: 100%;
 }
 
 body {
-  background: #C9FFBF;
-  background: -webkit-linear-gradient(to left, #C9FFBF , #FFAFBD);
-  background: linear-gradient(to left, #C9FFBF , #FFAFBD);
+  background: $gradient-left;
+  background: -webkit-linear-gradient(to left, $gradient-left, $gradient-right);
+  background: linear-gradient(to left, $gradient-left, $gradient-right);
 
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
