@@ -1,7 +1,7 @@
 ---
 ---
 
-<p>Tweedehands producten gewoon kopen met een druk op de knop en supersnel in huis!</p>
+<p>Tweedehands producten met een druk op de knop kopen zonder opgelicht te worden!</p>
 
 <section>
   <p>PacketSwap wordt binnenkort gelanceerd en alleen jij krijgt de eerste bestelling verzendkosten vrij. Volg daarvoor de volgende stappen.</p>
