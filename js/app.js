@@ -9,7 +9,8 @@ var forEach = function(array, callback, scope) {
 // Make more button expand the sections
 var expands = document.querySelectorAll('section.expand');
 forEach(expands, function(index, section) {
+  section.classList.add('closed');
   section.addEventListener('click', function() {
-  	section.classList.add('open');
+    section.classList.remove('closed');
   });
 });
