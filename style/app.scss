@@ -6,12 +6,15 @@ html {
 }
 
 body {
-  background-color: #fff;
+  background: #ADD100;
+  background: -webkit-linear-gradient(to left, #ADD100 , #7B920A);
+  background: linear-gradient(to left, #ADD100 , #7B920A);
+
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #333;
+  color: #F5F5F5;
 }
 
 main {
