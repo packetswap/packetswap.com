@@ -32,8 +32,8 @@ document.body.addEventListener('DOMSubtreeModified', function () {
 
 // Go to next page
 var expands = document.querySelectorAll('[data-next]');
-forEach(expands, function(index, element) {
-  element.addEventListener('click', function(element) {
+forEach(expands, function(index, expand) {
+  expand.addEventListener('click', function(element) {
     var next = element.target.getAttribute('data-next');
     goTo(next);
   });
@@ -41,9 +41,18 @@ forEach(expands, function(index, element) {
 
 function goTo(step) {
   document.querySelector('html').classList.add('hide-main');
-  ul.style.display = 'block';
   var ul = document.querySelector('ul.fullscreen');
-  if (step === 'twitter') {
+  ul.style.display = 'block';
+
+  // Remove classes
+  ul.querySelector('li.facebook').classList.remove('active');
+  ul.querySelector('li.twitter').classList.remove('active');
+  ul.querySelector('li.email').classList.remove('active');
+
+  if (step === 'facebook') {
+    ul.querySelector('li.' + step).classList.add('active');
+  }
+  else if (step === 'twitter') {
     ul.querySelector('li.facebook').classList.add('done');
     ul.querySelector('li.facebook').classList.remove('active');
     ul.querySelector('li.twitter').classList.add('active');
@@ -54,6 +63,9 @@ function goTo(step) {
     ul.querySelector('li.email').classList.add('active');
   }
   else if (step === 'done') {
+    ul.querySelector('li.facebook').classList.remove('done');
+    ul.querySelector('li.twitter').classList.remove('done');
+    ul.querySelector('li.email').classList.remove('done');
     ul.style.display = 'none';
     document.querySelector('html').classList.remove('hide-main');
   }
@@ -64,9 +76,9 @@ twttr.ready(
     twttr.events.bind(
       'follow',
       function (event) {
-        console.log(event.data);
-        var followedUserId = event.data.user_id;
-        var followedScreenName = event.data.screen_name;
+        window.setTimeout(function() {
+          goTo('email');
+        }, 1000);
       }
     );
   }

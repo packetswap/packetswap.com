@@ -4,8 +4,8 @@
 @import 'mixins/gradients';
 @import url(https://fonts.googleapis.com/css?family=Maven+Pro:700,500);
 
-$gradient-left: #B993D6;
-$gradient-right: #8CA6DB;
+$gradient-left: rgb(41, 212, 120);
+$gradient-right: rgb(35, 160, 92);
 
 $site-color: mix($gradient-left, $gradient-right, 50%);
 $site-width: 600px;
@@ -13,6 +13,17 @@ $site-breakpoint: 500px;
 $site-margin: 1em;
 
 $color-almost-white: mix(white, $site-color, 85%);
+
+%button {
+  font-size: 12px;
+  text-align: center;
+  padding: 5px 10px;
+  border: 1px solid $site-color;
+  color: $site-color;
+  border-radius: 3px;
+  background-color: lighten($color-almost-white, 2%);
+  cursor: pointer;
+}
 
 html {
   font-size: 100%;
@@ -46,6 +57,10 @@ main {
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 40px;
+  }
 }
 
 header {
@@ -73,7 +88,7 @@ header {
   }
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Maven Pro', Helvetica, sans-serif;
   color: #F3F1F1;
   font-weight: 500;
@@ -111,15 +126,18 @@ p, li {
   margin: $site-margin 0;
 }
 
-footer p {
-  margin-bottom: 0;
+footer {
+  padding-bottom: 100px;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 section {
   border-radius: 3px;
   box-shadow: 2px 2px 10px darken($site-color, 10%);
   background-color: $color-almost-white;
-  color: #807EB5;
+  color: darken($site-color, 20%);
   padding: 14px;
   margin: $site-margin 0;
 
@@ -149,20 +167,15 @@ section {
     }
 
     &::after {
+      @extend %button;
+
       content: 'Meer';
-      font-size: 12px;
-      text-align: center;
       display: block;
       position: absolute;
-      padding: 5px 0;
-      bottom: 20px;
-      width: 100px;
       left: calc(50% - 50px);
-      border: 1px solid $site-color;
-      color: $site-color;
-      border-radius: 3px;
-      background-color: lighten($color-almost-white, 2%);
-      cursor: pointer;
+      width: 100px;
+      bottom: 20px;
+      padding: 5px 0;
     }
 
     &:hover::after {
@@ -190,20 +203,17 @@ ul.steps {
     min-height: 50px;
     margin-top: 10px;
 
-    &:nth-of-type(2) {
-      &::before {
-        content: '2';
-      }
-    }
-    &:nth-of-type(3) {
-      &::before {
-        content: '3';
+    @for $i from 1 through 5 {
+      &:nth-of-type(#{$i}) {
+        &::before {
+          content: '#{$i}';
+        }
       }
     }
   }
 
   li::before {
-    content: '1';
+    content: '-';
 
     font-size: 30px;
     text-align: center;
@@ -234,16 +244,17 @@ ul.fullscreen {
   z-index: 9000;
   background-color: $color-almost-white;
 
-  h1, h2, h3, p {
+  h1, h2, h3, h4, h5, h6, p, .close {
     color: $site-color;
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
   }
 
   li {
     margin: 0;
+    padding: 50px;
     padding-top: 100px;
     text-align: center;
     display: block;
@@ -260,13 +271,34 @@ ul.fullscreen {
     }
     &.active {
       transform: translate(0, 0);
+
+      a.close {
+        opacity: 1;
+      }
     }
+  }
+
+  a.close {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 50px !important;
+    transition: opacity 0.1s ease-out;
+    opacity: 0;
+  }
+
+  a[data-next] {
+    font-size: 10px;
   }
 }
 
-a[data-next] {
+a {
   cursor: pointer;
-  font-size: 10px;
+}
+
+button, .button {
+  @extend %button;
 }
 
 input[type="text"] {
