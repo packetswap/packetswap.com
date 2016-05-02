@@ -199,7 +199,7 @@ ul.steps {
   list-style: none;
 
   li {
-    line-height: 50px;
+    line-height: 30px;
     position: relative;
     margin-left: 70px;
     min-height: 50px;
@@ -211,6 +211,12 @@ ul.steps {
           content: '#{$i}';
         }
       }
+    }
+
+
+    @media (min-width: $site-breakpoint) {
+      padding-top: 15px;
+      line-height: 50px;
     }
   }
 
