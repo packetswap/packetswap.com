@@ -127,9 +127,14 @@ p, li {
 }
 
 footer {
-  padding-bottom: 100px;
-  p {
-    margin-bottom: 0;
+  margin-top: 50px;
+  background-color: rgba(255, 255, 255, 0.5);
+  min-height: 150px;
+  text-align: center;
+  img {
+    margin: 20px;
+    width: 350px;
+    max-width: 100%;
   }
 }
 
@@ -212,7 +217,6 @@ ul.steps {
         }
       }
     }
-
 
     @media (min-width: $site-breakpoint) {
       padding-top: 15px;
