@@ -9,7 +9,7 @@ $gradient-right: #8CA6DB;
 
 $site-color: mix($gradient-left, $gradient-right, 50%);
 $site-width: 600px;
-$site-breakpoint: 375px;
+$site-breakpoint: 500px;
 $site-margin: 1em;
 
 $color-almost-white: mix(white, $site-color, 85%);
