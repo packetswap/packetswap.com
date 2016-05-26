@@ -4,7 +4,7 @@
 <p>Koop en verkoop tweedehands producten zonder opgelicht te worden!</p>
 
 <section>
-  <p>PacketSwap wordt binnenkort gelanceerd en jij krijgt de eerste bestelling verzendkosten vrij. <a data-next="facebook">Volg daarvoor de volgende stappen.</a></p>
+  <p>PacketSwap wordt binnenkort gelanceerd en jij krijgt de eerste bestelling verzendkostenvrij. <a data-next="facebook">Volg daarvoor de volgende stappen.</a></p>
 </section>
 
 <ul class="steps">
@@ -23,7 +23,7 @@
 
   <p>Voor al deze problemen gaan wij een oplossing bieden. Dit kunnen wij natuurlijk niet alleen, daarom zoeken we zo veel mogelijk gebruikers voor tijdens de lancering. Dus wil jij ons helpen door iets te koop te zetten op PacketSwap tijdens de lancering?</p>
 
-  <p><button data-next="facebook">Meldt je aan en ontvang de invite!</a></button>
+  <p><button data-next="facebook">Meld je aan en ontvang de invite!</a></button>
 </section>
 
 <!-- <h3>Bedankt, je bent fantastisch!</h3> -->
