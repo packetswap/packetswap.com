@@ -9,8 +9,8 @@
 
 <ul class="steps">
   <li><a data-next="facebook">Like PacketSwap op Facebook</a> <button data-next="facebook">Start hier!</button></li>
-  <li><a data-next="facebook">Like PacketSwap op Twitter (als je dat hebt)</a></li>
-  <li><a data-next="facebook">Laat je e-mailadres achter</a></li>
+  <li><a data-next="twitter">Like PacketSwap op Twitter (als je dat hebt)</a></li>
+  <li><a data-next="email">Laat je e-mailadres achter</a></li>
   <li>Ontvang de invite voor de beta versie!</li>
 </ul>
 
@@ -23,7 +23,7 @@
 
   <p>Voor al deze problemen gaan wij een oplossing bieden. Dit kunnen wij natuurlijk niet alleen, daarom zoeken we zo veel mogelijk gebruikers voor tijdens de lancering. Dus wil jij ons helpen door iets te koop te zetten op PacketSwap tijdens de lancering?</p>
 
-  <p><button data-next="facebook">Meldt je aan en ontvang de invite!</a></button>
+  <p><button data-next="email">Meldt je aan en ontvang de invite!</a></button>
 </section>
 
 <!-- <h3>Bedankt, je bent fantastisch!</h3> -->
